@@ -1,0 +1,25 @@
+# This file is maintained automatically by "terraform init".
+# Manual edits may be lost in future updates.
+
+provider "registry.terraform.io/ciscodevnet/meraki" {
+  version     = "1.9.0"
+  constraints = "~> 1.0"
+  hashes = [
+    "h1:F39OSN9PGaAy30t1Fw+vnmFNMLWQb4VYLqDOReCgyXo=",
+    "zh:0b9a7d32f331998a2a1531811667be44f799dfc03f6929f1414d2cab69f659f2",
+    "zh:179f791e2aa0ca6353541d90956548033b9ee0c880a096e48ce3ae3fe8a1862e",
+    "zh:2a1a32c6a8068c194e19859a7d88e0b95d0d9cbcf31444454b055ed62ace715a",
+    "zh:491812b74919d131f4ef3ba968d10b678275ed201428e2af7f53df40fd7e8cee",
+    "zh:4f5043f5165ee5199a61e4c15230d9f973ed0211a06600d75638f8369bac73fa",
+    "zh:5679d5a0d5dd370ff5d9321913f293f76be8f7ebc25e5cf1b45ceed9de803348",
+    "zh:58e1faba3d322bca68efb5cdac1ebe4e6d6f92834ebe5ccff8e491685620185c",
+    "zh:861b04ee4a498070cfb581488ddc3e90b25be895d35861c2a03a3b224d28e9b5",
+    "zh:890df766e9b839623b1f0437355032a3c006226a6c200cd911e15ee1a9014e9f",
+    "zh:92ee52e0dd3372e6dc2ed21bf5b21124b646c4c1037477e66eae87614d814036",
+    "zh:a3a851a3ce0c32b17506da0b9370f9d31df8e9d5ed4b422dc09ff5337d4b4192",
+    "zh:cdac168b00fa658ec68862677cb0b00f356095654e6b1d0df823c330492fa753",
+    "zh:dc454d6b1051891c99051b92e61015d244eb320a5a491cbffb770a005e448898",
+    "zh:f14317688e068e40dc11f609c4dc4f81cfa50fbaa43dcbe0117725f1149e9d89",
+    "zh:fe0544ac117d0c643559f042996fa32f243988bc48d4d49875abad6b326f0e2e",
+  ]
+}
