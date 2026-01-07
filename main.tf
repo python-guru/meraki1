@@ -6,7 +6,7 @@ resource "meraki_network" "lab" {
   product_types = ["wireless"]
 
   time_zone = var.timezone
-  notes    = var.notes
+  notes     = var.notes
 }
 
 output "network_id" {
