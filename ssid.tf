@@ -3,7 +3,7 @@ resource "meraki_wireless_ssid" "lab" {
 
   number          = "2"
   name            = var.ssid_name
-  enabled         = false
+  enabled         = true
   encryption_mode = "wpa"
   auth_mode       = "psk"
   psk             = var.ssid_psk
