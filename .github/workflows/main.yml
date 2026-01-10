@@ -1,28 +1,40 @@
-name: Terraform Meraki
+name: Terraform Meraki CI/CD
 
 on:
-  pull_request:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# Ensure only one Terraform task runs at a time to prevent state locking
+concurrency:
+  group: terraform
+  cancel-in-progress: false
 
 jobs:
   terraform:
+    name: "Terraform Infrastructure"
     runs-on: ubuntu-latest
-
     env:
       MERAKI_API_KEY: ${{ secrets.MERAKI_API_KEY }}
 
     steps:
-      - name: Checkout
+      - name: Checkout Code
         uses: actions/checkout@v4
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_wrapper: true # Required to capture output for PR comments
 
-      - name: Authenticate to Google Cloud
+      - name: Authenticate to GCP
         uses: google-github-actions/auth@v2
         with:
           credentials_json: ${{ secrets.GCP_TF_STATE_KEY }}
+
+      - name: Terraform Format Check
+        run: terraform fmt -check
+        continue-on-error: true # Don't fail the whole job if formatting is off, but it's good to know
 
       - name: Terraform Init
         run: terraform init -input=false
@@ -31,8 +43,11 @@ jobs:
         run: terraform validate
 
       - name: Terraform Plan
+        id: plan
         run: terraform plan -input=false
-
-      - name: Terraform Apply (main only)
-        if: github.ref == 'refs/heads/main'
-        run: terraform apply -auto-approve
+        # This will run on PRs and on pushes to main so you can see the delta
+        
+      - name: Terraform Apply
+        # ONLY run apply if we are on the main branch AND it's a push (merge)
+        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+        run: terraform apply -auto-approve -input=false
