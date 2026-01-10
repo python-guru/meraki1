@@ -2,8 +2,6 @@ name: Terraform Meraki
 
 on:
   pull_request:
-  push:
-    branches: [ main ]
 
 jobs:
   terraform:
