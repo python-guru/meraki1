@@ -9,3 +9,4 @@ resource "meraki_wireless_ssid" "lab" {
   psk             = var.ssid_psk
 }
 # keep it minimal, keep it real!
+# keep it minimal
