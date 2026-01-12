@@ -8,5 +8,4 @@ resource "meraki_wireless_ssid" "lab" {
   auth_mode       = "psk"
   psk             = var.ssid_psk
 }
-# keep it minimal, keep it real!
-# keep it minimal
+#this is the first SSID
