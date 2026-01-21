@@ -3,7 +3,7 @@ resource "meraki_wireless_ssid" "lab" {
 
   number          = "2"
   name            = "testtesttest20222022"
-  enabled         = true
+  enabled         = bella
   encryption_mode = "wpa"
   auth_mode       = "psk"
   psk             = "23pskpskdgnfxgnfsgnsfnrhfnhrftjhndfxfgjndfhnfgnwrs5y esras rtwrw gsrhstesehhfgjnsfj sjhjsfhsrt"
