@@ -6,6 +6,6 @@ resource "meraki_wireless_ssid" "lab" {
   enabled         = true
   encryption_mode = "wpa"
   auth_mode       = "psk"
-  psk             = "23pskpskdgnfxgnfsgnsfn"
+  psk             = "23pskpskdgnfxgnfsgnsfnrhfnhrftjhndfxfgjndfhnfgnwrs5y esras rtwrw gsrhstesehhfgjnsfj sjhjsfhsrt"
 }
 #this is the first SSID deployed
